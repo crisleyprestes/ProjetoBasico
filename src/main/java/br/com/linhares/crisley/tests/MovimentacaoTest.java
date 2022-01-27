@@ -3,8 +3,16 @@ package br.com.linhares.crisley.tests;
 import br.com.linhares.crisley.BaseTest;
 import br.com.linhares.crisley.pages.MenuPage;
 import br.com.linhares.crisley.pages.MovimentacaoPage;
+import br.com.linhares.crisley.utils.DataUtils;
 import org.junit.Assert;
 import org.junit.Test;
+
+import javax.xml.crypto.Data;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import static br.com.linhares.crisley.utils.DataUtils.*;
 
 public class MovimentacaoTest extends BaseTest {
 
@@ -30,28 +38,31 @@ public class MovimentacaoTest extends BaseTest {
     public void testCamposObrigatorios(){
         menuPage.acessarCriarMovimentacao();
         movimentacaoPage.salvar();
-        Assert.assertEquals("Data da Movimentação é obrigatório",
-                movimentacaoPage.obterMsgErroDataMovimentacao());
-        Assert.assertEquals("Data do pagamento é obrigatório", movimentacaoPage.obterMsgErroDataPagamento());
-        Assert.assertEquals("Descrição é obrigatório", movimentacaoPage.obterMsgErroDescricao());
-        Assert.assertEquals("Interessado é obrigatório", movimentacaoPage.obterMsgErroInteressado());
-        Assert.assertEquals("Valor é obrigatório", movimentacaoPage.obterMsgErroValor());
-        Assert.assertEquals("Valor deve ser um número", movimentacaoPage.obterValidacaoErroValor());
+        List<String> erros = movimentacaoPage.obterErros();
+        Assert.assertTrue(erros.containsAll(Arrays.asList("Data da Movimentação é obrigatório", "Data do pagamento é obrigatório",
+                "Descrição é obrigatório", "Interessado é obrigatório",
+                "Valor é obrigatório", "Valor deve ser um número")));
+        Assert.assertEquals(6, erros.size());
     }
 
     @Test
     public void testInserirMovimentacaoFutura(){
-       menuPage.acessarCriarMovimentacao();
+        menuPage.acessarCriarMovimentacao();
+
+        Date dataFutura = obterDataComDiferencaDias(5);
+
         movimentacaoPage.setTipoDaMovimentacao("Receita");
-        movimentacaoPage.setDataDaMovimentacao("25/08/2022");
-        movimentacaoPage.setDataDoPagamento("25/09/2022");
+        movimentacaoPage.setDataDaMovimentacao(obterDataFormatada(dataFutura));
+        movimentacaoPage.setDataDoPagamento(obterDataFormatada(dataFutura));
         movimentacaoPage.setDescricao("Testando movimentação");
         movimentacaoPage.setInteressado("Usuário de Teste");
         movimentacaoPage.setValor("1500");
         movimentacaoPage.setConta("Testando novamente");
         movimentacaoPage.setSituacaoPago();
         movimentacaoPage.salvar();
-        Assert.assertEquals("Data da Movimentação deve ser menor ou igual à data atual",
-                movimentacaoPage.obterErroDataMovimentacaoMenorDataAtual());
+
+        List<String> erros = movimentacaoPage.obterErros();
+        Assert.assertTrue(erros.contains("Data da Movimentação deve ser menor ou igual à data atual"));
+        Assert.assertEquals(1, erros.size());
     }
 }

@@ -1,7 +1,14 @@
 package br.com.linhares.crisley.pages;
 
 import br.com.linhares.crisley.BasePage;
+import br.com.linhares.crisley.DriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static br.com.linhares.crisley.DriverFactory.*;
 
 public class MovimentacaoPage extends BasePage {
 
@@ -45,31 +52,13 @@ public class MovimentacaoPage extends BasePage {
         return obterTexto(By.xpath("//div[@class='alert alert-success']"));
     }
 
-    public String obterMsgErroDataMovimentacao(){
-        return obterTexto(By.xpath("//li[.='Data da Movimentação é obrigatório']"));
+    public List<String> obterErros(){
+        List<WebElement> erros = getDriver().findElements(By.xpath("//div[@class='alert alert-danger']//li"));
+        List<String> retorno = new ArrayList<String>();
+        for(WebElement erro: erros){
+            retorno.add(erro.getText());
+        }
+        return retorno;
     }
 
-    public String obterMsgErroDataPagamento(){
-        return obterTexto(By.xpath("//li[.='Data do pagamento é obrigatório']"));
-    }
-
-    public String obterMsgErroDescricao(){
-        return obterTexto(By.xpath("//li[.='Descrição é obrigatório']"));
-    }
-
-    public String obterMsgErroInteressado(){
-        return obterTexto(By.xpath("//li[.='Interessado é obrigatório']"));
-    }
-
-    public String obterMsgErroValor(){
-        return obterTexto(By.xpath("//li[.='Valor é obrigatório']"));
-    }
-
-    public String obterValidacaoErroValor(){
-        return obterTexto(By.xpath("//li[.='Valor deve ser um número']"));
-    }
-
-    public String obterErroDataMovimentacaoMenorDataAtual() {
-        return obterTexto(By.xpath("//div[@class='alert alert-danger']"));
-    }
 }
