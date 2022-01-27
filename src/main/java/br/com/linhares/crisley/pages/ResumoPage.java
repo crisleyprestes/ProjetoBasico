@@ -14,7 +14,7 @@ public class ResumoPage extends BasePage {
     }
 
     public void buscar(){
-        clicarBotaoPorTexto("Buscar");
+        clicarBotaoPorValue("Buscar");
     }
 
     public void excluirMovimentacao(String conta){
