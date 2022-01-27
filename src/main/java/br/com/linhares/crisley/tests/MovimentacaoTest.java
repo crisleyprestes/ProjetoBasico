@@ -1,6 +1,5 @@
 package br.com.linhares.crisley.tests;
 
-import br.com.linhares.crisley.BasePage;
 import br.com.linhares.crisley.BaseTest;
 import br.com.linhares.crisley.pages.MenuPage;
 import br.com.linhares.crisley.pages.MovimentacaoPage;
