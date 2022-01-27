@@ -1,14 +1,13 @@
 package br.com.linhares.crisley.pages;
 
 import br.com.linhares.crisley.BasePage;
-import br.com.linhares.crisley.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static br.com.linhares.crisley.DriverFactory.*;
+import static br.com.linhares.crisley.DriverFactory.getDriver;
 
 public class MovimentacaoPage extends BasePage {
 

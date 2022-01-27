@@ -3,16 +3,15 @@ package br.com.linhares.crisley.tests;
 import br.com.linhares.crisley.BaseTest;
 import br.com.linhares.crisley.pages.MenuPage;
 import br.com.linhares.crisley.pages.MovimentacaoPage;
-import br.com.linhares.crisley.utils.DataUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.xml.crypto.Data;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static br.com.linhares.crisley.utils.DataUtils.*;
+import static br.com.linhares.crisley.utils.DataUtils.obterDataComDiferencaDias;
+import static br.com.linhares.crisley.utils.DataUtils.obterDataFormatada;
 
 public class MovimentacaoTest extends BaseTest {
 

@@ -56,6 +56,10 @@ public class BasePage {
         clicarBotao(By.xpath("//button[.='"+texto+"']"));
     }
 
+    public void clicarBotaoPorValue(String texto){
+        clicarBotao(By.xpath("//input[@value='"+texto+"']"));
+    }
+
     public void fechar(){
         getDriver().close();
     }
