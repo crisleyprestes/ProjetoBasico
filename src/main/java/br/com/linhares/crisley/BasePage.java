@@ -52,6 +52,10 @@ public class BasePage {
         getDriver().findElement(by).click();
     }
 
+    public void clicarBotaoPorTexto(String texto){
+        clicarBotao(By.xpath("//button[.='"+texto+"']"));
+    }
+
     public void fechar(){
         getDriver().close();
     }

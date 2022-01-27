@@ -5,40 +5,40 @@ import org.openqa.selenium.By;
 
 public class MovimentacaoPage extends BasePage {
 
-    public void tipoDaMovimentacao(String opcao){
+    public void setTipoDaMovimentacao(String opcao){
         selecionarCombo("tipo", opcao);
     }
 
-    public void dataDaMovimentacao(String data){
+    public void setDataDaMovimentacao(String data){
         escrever("data_transacao", data);
     }
 
-    public void dataDoPagamento(String data){
+    public void setDataDoPagamento(String data){
         escrever("data_pagamento", data);
     }
 
-    public void descricao(String texto){
+    public void setDescricao(String texto){
         escrever("descricao", texto);
     }
 
-    public void interessado(String nome){
+    public void setInteressado(String nome){
         escrever("interessado", nome);
     }
 
-    public void valor(Integer valor){
+    public void setValor(Integer valor){
         escrever("valor", String.valueOf(valor));
     }
 
-    public void conta(String conta){
+    public void setConta(String conta){
         selecionarCombo("conta", conta);
     }
 
-    public void situacaoPendente(){
-        clicarRadio("status_pendente");
+    public void setSituacaoPago(){
+        clicarRadio("status_pago");
     }
 
     public void salvar(){
-        clicarBotao(By.xpath("//button[.='Salvar']"));
+        clicarBotaoPorTexto("Salvar");
     }
 
     public String obterMensagemSucesso(){

@@ -11,7 +11,6 @@ public class ContaTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
     ContasPage contasPage = new ContasPage();
-    MovimentacaoPage movimentacaoPage = new MovimentacaoPage();
 
     @Test
     public void testInserirConta(){
@@ -37,20 +36,4 @@ public class ContaTest extends BaseTest {
         contasPage.salvar();
         Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
     }
-
-    @Test
-    public void testInserirMovimentacao(){
-        menuPage.acessarCriarMovimentacao();
-        movimentacaoPage.tipoDaMovimentacao("Receita");
-        movimentacaoPage.dataDaMovimentacao("25/08/2019");
-        movimentacaoPage.dataDoPagamento("25/09/2019");
-        movimentacaoPage.descricao("Testando movimentação");
-        movimentacaoPage.interessado("Usuário de Teste");
-        movimentacaoPage.valor(Integer.valueOf("1500"));
-        movimentacaoPage.conta("Testando novamente");
-        movimentacaoPage.situacaoPendente();
-        movimentacaoPage.salvar();
-        Assert.assertEquals("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
-    }
-
 }
