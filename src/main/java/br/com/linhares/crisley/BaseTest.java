@@ -3,7 +3,6 @@ package br.com.linhares.crisley;
 import br.com.linhares.crisley.pages.LoginPage;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
@@ -16,16 +15,9 @@ import static br.com.linhares.crisley.DriverFactory.getDriver;
 import static br.com.linhares.crisley.DriverFactory.killDriver;
 
 public class BaseTest {
-    private LoginPage page = new LoginPage();
 
     @Rule
     public TestName testname = new TestName();
-
-    @Before
-    public void inicializa(){
-        page.acessarTelaInicial();
-        page.logar("prestes40@gmail.com","c19-p02-l90");
-    }
 
     @After
     public void finaliza() throws IOException {

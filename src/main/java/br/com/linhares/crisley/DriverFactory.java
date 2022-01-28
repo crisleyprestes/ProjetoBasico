@@ -13,7 +13,7 @@ public class DriverFactory {
 
     public static WebDriver getDriver(){
         if(driver == null) {
-            switch (Propriedades.browsers) {
+            switch (Propriedades.browser) {
                 case FIREFOX:
                     System.setProperty("webdriver.gecko.driver", "src/drivers/geckodriver.exe");
                     driver = new FirefoxDriver();

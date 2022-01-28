@@ -9,12 +9,13 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import static br.com.linhares.crisley.DriverFactory.getDriver;
+import static br.com.linhares.crisley.Propriedades.NOME_CONTA_ALTERADA;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTest extends BaseTest {
 
-    private ResumoPage resumoPage = new ResumoPage();
-    private MenuPage menuPage = new MenuPage();
+    ResumoPage resumoPage = new ResumoPage();
+    MenuPage menuPage = new MenuPage();
 
     @Test
     public void test1_ExcluirMovimentacao(){
@@ -22,7 +23,7 @@ public class ResumoTest extends BaseTest {
         resumoPage.setMes("Janeiro");
         resumoPage.setAno("2022");
         resumoPage.buscar();
-        resumoPage.excluirMovimentacao("Novo Usuário de Teste");
+        resumoPage.excluirMovimentacao(NOME_CONTA_ALTERADA);
         Assert.assertEquals("Movimentação removida com sucesso!", resumoPage.obterMensagemSucesso());
     }
 

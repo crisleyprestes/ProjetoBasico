@@ -8,6 +8,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import static br.com.linhares.crisley.Propriedades.NOME_CONTA_ALTERADA;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ContasTest extends BaseTest {
 
@@ -26,7 +28,7 @@ public class ContasTest extends BaseTest {
     public void test2_AlterarConta(){
         menuPage.acessarTelaListarContas();
         contasPage.clicarAlterarConta("Usuário de Teste");
-        contasPage.setNome("Novo Usuário de Teste");
+        contasPage.setNome(NOME_CONTA_ALTERADA);
         contasPage.salvar();
         Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
     }
@@ -34,7 +36,7 @@ public class ContasTest extends BaseTest {
     @Test
     public void test3_InserirContaComMesmoNome(){
         menuPage.acessarTelaInserirConta();
-        contasPage.setNome("Novo Usuário de Teste");
+        contasPage.setNome(NOME_CONTA_ALTERADA);
         contasPage.salvar();
         Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
     }

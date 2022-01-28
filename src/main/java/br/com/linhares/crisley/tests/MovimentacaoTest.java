@@ -13,14 +13,15 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import static br.com.linhares.crisley.Propriedades.NOME_CONTA_ALTERADA;
 import static br.com.linhares.crisley.utils.DataUtils.obterDataComDiferencaDias;
 import static br.com.linhares.crisley.utils.DataUtils.obterDataFormatada;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
 
-    private MenuPage menuPage = new MenuPage();
-    private MovimentacaoPage movimentacaoPage = new MovimentacaoPage();
+    MenuPage menuPage = new MenuPage();
+    MovimentacaoPage movimentacaoPage = new MovimentacaoPage();
 
     @Ignore
     public void testInserirMovimentacaoPendente(){
@@ -29,9 +30,9 @@ public class MovimentacaoTest extends BaseTest {
         movimentacaoPage.setDataDaMovimentacao("01/01/2022");
         movimentacaoPage.setDataDoPagamento("05/01/2022");
         movimentacaoPage.setDescricao("Testando movimentação");
-        movimentacaoPage.setInteressado("Usuário de Teste");
+        movimentacaoPage.setInteressado(NOME_CONTA_ALTERADA);
         movimentacaoPage.setValor("1500");
-        movimentacaoPage.setConta("Testando novamente");
+        movimentacaoPage.setConta(NOME_CONTA_ALTERADA);
         movimentacaoPage.setSituacaoPendente();
         movimentacaoPage.salvar();
         Assert.assertEquals("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
@@ -44,9 +45,9 @@ public class MovimentacaoTest extends BaseTest {
         movimentacaoPage.setDataDaMovimentacao("01/01/2022");
         movimentacaoPage.setDataDoPagamento("05/01/2022");
         movimentacaoPage.setDescricao("Testando a movimentação");
-        movimentacaoPage.setInteressado("Usuário de Teste");
+        movimentacaoPage.setInteressado(NOME_CONTA_ALTERADA);
         movimentacaoPage.setValor("1500");
-        movimentacaoPage.setConta("Novo Usuário de Teste");
+        movimentacaoPage.setConta(NOME_CONTA_ALTERADA);
         movimentacaoPage.setSituacaoPago();
         movimentacaoPage.salvar();
         Assert.assertEquals("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
@@ -73,9 +74,9 @@ public class MovimentacaoTest extends BaseTest {
         movimentacaoPage.setDataDaMovimentacao(obterDataFormatada(dataFutura));
         movimentacaoPage.setDataDoPagamento(obterDataFormatada(dataFutura));
         movimentacaoPage.setDescricao("Testando a movimentação");
-        movimentacaoPage.setInteressado("Usuário de Teste");
+        movimentacaoPage.setInteressado(NOME_CONTA_ALTERADA);
         movimentacaoPage.setValor("1500");
-        movimentacaoPage.setConta("Novo Usuário de Teste");
+        movimentacaoPage.setConta(NOME_CONTA_ALTERADA);
         movimentacaoPage.setSituacaoPago();
         movimentacaoPage.salvar();
 
