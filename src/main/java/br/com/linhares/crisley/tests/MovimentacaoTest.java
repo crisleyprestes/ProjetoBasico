@@ -19,11 +19,26 @@ public class MovimentacaoTest extends BaseTest {
     private MovimentacaoPage movimentacaoPage = new MovimentacaoPage();
 
     @Test
-    public void testInserirMovimentacao(){
+    public void testInserirMovimentacaoPendente(){
         menuPage.acessarCriarMovimentacao();
         movimentacaoPage.setTipoDaMovimentacao("Receita");
-        movimentacaoPage.setDataDaMovimentacao("25/08/2019");
-        movimentacaoPage.setDataDoPagamento("25/09/2019");
+        movimentacaoPage.setDataDaMovimentacao("01/01/2022");
+        movimentacaoPage.setDataDoPagamento("05/01/2022");
+        movimentacaoPage.setDescricao("Testando movimentação");
+        movimentacaoPage.setInteressado("Usuário de Teste");
+        movimentacaoPage.setValor("1500");
+        movimentacaoPage.setConta("Testando novamente");
+        movimentacaoPage.setSituacaoPendente();
+        movimentacaoPage.salvar();
+        Assert.assertEquals("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
+    }
+
+    @Test
+    public void testInserirMovimentacaoPago(){
+        menuPage.acessarCriarMovimentacao();
+        movimentacaoPage.setTipoDaMovimentacao("Receita");
+        movimentacaoPage.setDataDaMovimentacao("01/01/2022");
+        movimentacaoPage.setDataDoPagamento("05/01/2022");
         movimentacaoPage.setDescricao("Testando movimentação");
         movimentacaoPage.setInteressado("Usuário de Teste");
         movimentacaoPage.setValor("1500");

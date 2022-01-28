@@ -60,4 +60,7 @@ public class MovimentacaoPage extends BasePage {
         return retorno;
     }
 
+    public void setSituacaoPendente() {
+        clicarRadio("status_pendente");
+    }
 }
