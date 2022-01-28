@@ -200,6 +200,7 @@ public class BasePage {
         celula.findElement(By.xpath(".//input")).click();
     }
 
+
     protected int obterIndiceColuna(String coluna, WebElement tabela){
         List<WebElement> colunas = tabela.findElements(By.xpath(".//th"));
         int idColuna = -1;

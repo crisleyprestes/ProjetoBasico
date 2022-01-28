@@ -25,6 +25,4 @@ public class ResumoPage extends BasePage {
     public String obterMensagemSucesso(){
         return obterTexto(By.xpath("//div[@class='alert alert-success']"));
     }
-
-
 }

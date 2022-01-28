@@ -1,12 +1,17 @@
 package br.com.linhares.crisley.tests;
 
 import br.com.linhares.crisley.BaseTest;
+import br.com.linhares.crisley.DriverFactory;
 import br.com.linhares.crisley.pages.MenuPage;
 import br.com.linhares.crisley.pages.ResumoPage;
 import org.junit.Assert;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 import static br.com.linhares.crisley.DriverFactory.getDriver;
 import static br.com.linhares.crisley.Propriedades.NOME_CONTA_ALTERADA;
@@ -17,7 +22,7 @@ public class ResumoTest extends BaseTest {
     ResumoPage resumoPage = new ResumoPage();
     MenuPage menuPage = new MenuPage();
 
-    @Test
+   @Test
     public void test1_ExcluirMovimentacao(){
         menuPage.acessarTelaResumoMensal();
         resumoPage.setMes("Janeiro");
@@ -31,5 +36,8 @@ public class ResumoTest extends BaseTest {
     public void test2_ResumoMensal(){
         menuPage.acessarTelaResumoMensal();
         Assert.assertEquals("Seu Barriga - Extrato", getDriver().getTitle());
+        List<WebElement> elementosEncontrados= DriverFactory.getDriver().
+                findElements(By.xpath("//*[@id='tabelaExtrato']/tbody/tr"));
+        Assert.assertEquals(0, elementosEncontrados.size());
     }
 }
