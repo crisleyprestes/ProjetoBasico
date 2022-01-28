@@ -20,7 +20,7 @@ public class MovimentacaoTest extends BaseTest {
 
     @Test
     public void testInserirMovimentacaoPendente(){
-        menuPage.acessarCriarMovimentacao();
+        menuPage.acessarTelaCriarMovimentacao();
         movimentacaoPage.setTipoDaMovimentacao("Receita");
         movimentacaoPage.setDataDaMovimentacao("01/01/2022");
         movimentacaoPage.setDataDoPagamento("05/01/2022");
@@ -35,7 +35,7 @@ public class MovimentacaoTest extends BaseTest {
 
     @Test
     public void testInserirMovimentacaoPago(){
-        menuPage.acessarCriarMovimentacao();
+        menuPage.acessarTelaCriarMovimentacao();
         movimentacaoPage.setTipoDaMovimentacao("Receita");
         movimentacaoPage.setDataDaMovimentacao("01/01/2022");
         movimentacaoPage.setDataDoPagamento("05/01/2022");
@@ -50,7 +50,7 @@ public class MovimentacaoTest extends BaseTest {
 
     @Test
     public void testCamposObrigatorios(){
-        menuPage.acessarCriarMovimentacao();
+        menuPage.acessarTelaCriarMovimentacao();
         movimentacaoPage.salvar();
         List<String> erros = movimentacaoPage.obterErros();
         Assert.assertTrue(erros.containsAll(Arrays.asList("Data da Movimentação é obrigatório", "Data do pagamento é obrigatório",
@@ -61,7 +61,7 @@ public class MovimentacaoTest extends BaseTest {
 
     @Test
     public void testInserirMovimentacaoFutura(){
-        menuPage.acessarCriarMovimentacao();
+        menuPage.acessarTelaCriarMovimentacao();
 
         Date dataFutura = obterDataComDiferencaDias(5);
 

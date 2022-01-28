@@ -191,7 +191,7 @@ public class BasePage {
         int idColunaBotao = obterIndiceColuna(colunaBotao, tabela);
 
         //clicar no botão da celula encontrada
-        WebElement celula = tabela.findElement(By.xpath(".//tr["+idLinha+"]/td["+idColunaBotao+"]"));
+        WebElement celula = tabela.findElement(By.xpath("//tr["+idLinha+"]/td["+idColunaBotao+"]"));
         return celula;
     }
 

@@ -4,6 +4,10 @@ import br.com.linhares.crisley.BasePage;
 
 public class MenuPage extends BasePage {
 
+    public void acessarTelaCriarMovimentacao(){
+        clicarLink("Criar Movimentação");
+    }
+
     public void acessarTelaInserirConta(){
         clicarLink("Contas");
         clicarLink("Adicionar");
@@ -14,11 +18,7 @@ public class MenuPage extends BasePage {
         clicarLink("Listar");
     }
 
-    public void acessarCriarMovimentacao(){
-        clicarLink("Criar Movimentação");
-    }
-
-    public void acessarResumoMensal() {
+    public void acessarTelaResumoMensal() {
         clicarLink("Resumo Mensal");
     }
 }

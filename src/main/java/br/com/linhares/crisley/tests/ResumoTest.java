@@ -2,7 +2,6 @@ package br.com.linhares.crisley.tests;
 
 import br.com.linhares.crisley.BaseTest;
 import br.com.linhares.crisley.pages.MenuPage;
-import br.com.linhares.crisley.pages.MovimentacaoPage;
 import br.com.linhares.crisley.pages.ResumoPage;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,7 +15,7 @@ public class ResumoTest extends BaseTest {
     @Test
     public void testExcluirMovimentacao(){
         movimentacaoTest.testInserirMovimentacaoPendente();
-        menuPage.acessarResumoMensal();
+        menuPage.acessarTelaResumoMensal();
         resumoPage.setMes("Janeiro");
         resumoPage.setAno("2022");
         resumoPage.buscar();
