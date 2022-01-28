@@ -11,6 +11,6 @@ public class HomeTest extends BaseTest {
 
     @Test
     public void testVerificarSaldoConta(){
-        Assert.assertEquals("7500.00", homePage.obterSaldoConta("Testando Novamente"));
+        Assert.assertEquals("1500.00", homePage.obterSaldoConta("Novo Usuário de Teste"));
     }
 }
