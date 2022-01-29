@@ -1,7 +1,6 @@
 package br.com.linhares.crisley.pages;
 
 import br.com.linhares.crisley.BasePage;
-import org.openqa.selenium.By;
 
 import static br.com.linhares.crisley.DriverFactory.getDriver;
 
