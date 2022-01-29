@@ -43,13 +43,13 @@ public class DriverFactory {
             }
             }
             if (Propriedades.TIPO_EXECUCAO == Propriedades.TipoExecucao.GRID) {
-                DesiredCapabilities capabilities = new DesiredCapabilities();
+                DesiredCapabilities capabilities = null;
                 switch (Propriedades.BROWSER) {
                     case FIREFOX:
-                        capabilities.setCapability("browser", "Firefox");
+                        DesiredCapabilities.firefox();
                         break;
                     case CHROME:
-                        capabilities.setCapability("browser", "Chrome");
+                        DesiredCapabilities.chrome();
                         break;
                 }
                 try {
