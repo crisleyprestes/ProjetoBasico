@@ -214,7 +214,7 @@ public class BasePage {
     }
 
     protected int obterIndiceLinha(String valor, WebElement tabela, int idColuna){
-        List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td["+ idColuna +"]"));
+        List<WebElement> linhas = tabela.findElements(By.xpath("./tbody/tr/td["+idColuna+"]"));
         int idLinha = -1;
         for(int i = 0; i < linhas.size(); i++){
             if(linhas.get(i).getText().equals(valor)){

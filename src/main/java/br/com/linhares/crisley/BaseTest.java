@@ -2,8 +2,7 @@ package br.com.linhares.crisley;
 
 import br.com.linhares.crisley.pages.LoginPage;
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
-import org.junit.Rule;
+import org.junit.*;
 import org.junit.rules.TestName;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -18,6 +17,13 @@ public class BaseTest {
 
     @Rule
     public TestName testname = new TestName();
+    private static LoginPage page = new LoginPage();
+
+    @Before
+    public void inicializa(){
+        page.acessarTelaInicial();
+        page.logar("prestes40@gmail.com","c19-p02-l90");
+    }
 
     @After
     public void finaliza() throws IOException {

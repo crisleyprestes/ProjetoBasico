@@ -14,11 +14,11 @@ public class ResumoPage extends BasePage {
     }
 
     public void buscar(){
-        clicarBotaoPorValue("Buscar");
+        clicarBotao(By.xpath("//input[@value='Buscar']"));
     }
 
     public void excluirMovimentacao(String conta){
-        obterCelula("Conta", conta, "Ações", "tabelaExtrato").
+        obterCelula("Descrição", conta, "Ações", "tabelaExtrato").
                 findElement(By.xpath("//span[@class='glyphicon glyphicon-remove-circle']")).click();
     }
 

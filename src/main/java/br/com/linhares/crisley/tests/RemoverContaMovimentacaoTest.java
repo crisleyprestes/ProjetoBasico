@@ -6,8 +6,6 @@ import br.com.linhares.crisley.pages.MenuPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static br.com.linhares.crisley.Propriedades.NOME_CONTA_ALTERADA;
-
 public class RemoverContaMovimentacaoTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
@@ -16,7 +14,7 @@ public class RemoverContaMovimentacaoTest extends BaseTest {
     @Test
     public void testExcluirContaComMovimentacao(){
         menuPage.acessarTelaListarContas();
-        contasPage.clicarExcluirConta(NOME_CONTA_ALTERADA);
+        contasPage.clicarExcluirConta("Conta com movimentacao");
         Assert.assertEquals("Conta em uso na movimentações", contasPage.obterMensagemErro());
     }
 }

@@ -23,7 +23,7 @@ public class ContasPage extends BasePage {
 
     public void clicarAlterarConta(String nomeConta){
         obterCelula("Conta", nomeConta, "Ações", "tabelaContas").
-                findElement(By.xpath(".//span[@class='glyphicon glyphicon-edit']")).click();
+                findElement(By.xpath("//span[@class='glyphicon glyphicon-edit']")).click();
     }
 
     public void clicarExcluirConta(String nomeConta){

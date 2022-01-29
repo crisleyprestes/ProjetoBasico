@@ -4,20 +4,16 @@ import br.com.linhares.crisley.BaseTest;
 import br.com.linhares.crisley.pages.MenuPage;
 import br.com.linhares.crisley.pages.MovimentacaoPage;
 import org.junit.Assert;
-import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static br.com.linhares.crisley.Propriedades.NOME_CONTA_ALTERADA;
 import static br.com.linhares.crisley.utils.DataUtils.obterDataComDiferencaDias;
 import static br.com.linhares.crisley.utils.DataUtils.obterDataFormatada;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTest extends BaseTest {
 
     MenuPage menuPage = new MenuPage();
@@ -30,31 +26,31 @@ public class MovimentacaoTest extends BaseTest {
         movimentacaoPage.setDataDaMovimentacao("01/01/2022");
         movimentacaoPage.setDataDoPagamento("05/01/2022");
         movimentacaoPage.setDescricao("Testando movimentação");
-        movimentacaoPage.setInteressado(NOME_CONTA_ALTERADA);
+        movimentacaoPage.setInteressado("Interessado Qualquer");
         movimentacaoPage.setValor("1500");
-        movimentacaoPage.setConta(NOME_CONTA_ALTERADA);
+        movimentacaoPage.setConta("Conta para movimentacoes");
         movimentacaoPage.setSituacaoPendente();
         movimentacaoPage.salvar();
         Assert.assertEquals("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
     }
 
     @Test
-    public void test1_InserirMovimentacaoPago(){
+    public void testInserirMovimentacaoPago(){
         menuPage.acessarTelaCriarMovimentacao();
         movimentacaoPage.setTipoDaMovimentacao("Receita");
         movimentacaoPage.setDataDaMovimentacao("01/01/2022");
         movimentacaoPage.setDataDoPagamento("05/01/2022");
         movimentacaoPage.setDescricao("Testando a movimentação");
-        movimentacaoPage.setInteressado(NOME_CONTA_ALTERADA);
+        movimentacaoPage.setInteressado("Interessado Qualquer");
         movimentacaoPage.setValor("1500");
-        movimentacaoPage.setConta(NOME_CONTA_ALTERADA);
+        movimentacaoPage.setConta("Conta para movimentacoes");
         movimentacaoPage.setSituacaoPago();
         movimentacaoPage.salvar();
         Assert.assertEquals("Movimentação adicionada com sucesso!", movimentacaoPage.obterMensagemSucesso());
     }
 
     @Test
-    public void test2_CamposObrigatorios(){
+    public void testCamposObrigatorios(){
         menuPage.acessarTelaCriarMovimentacao();
         movimentacaoPage.salvar();
         List<String> erros = movimentacaoPage.obterErros();
@@ -65,7 +61,7 @@ public class MovimentacaoTest extends BaseTest {
     }
 
     @Test
-    public void test3_InserirMovimentacaoFutura(){
+    public void testInserirMovimentacaoFutura(){
         menuPage.acessarTelaCriarMovimentacao();
 
         Date dataFutura = obterDataComDiferencaDias(5);
@@ -74,9 +70,9 @@ public class MovimentacaoTest extends BaseTest {
         movimentacaoPage.setDataDaMovimentacao(obterDataFormatada(dataFutura));
         movimentacaoPage.setDataDoPagamento(obterDataFormatada(dataFutura));
         movimentacaoPage.setDescricao("Testando a movimentação");
-        movimentacaoPage.setInteressado(NOME_CONTA_ALTERADA);
+        movimentacaoPage.setInteressado("Interessado Qualquer");
         movimentacaoPage.setValor("1500");
-        movimentacaoPage.setConta(NOME_CONTA_ALTERADA);
+        movimentacaoPage.setConta("Conta para movimentacoes");
         movimentacaoPage.setSituacaoPago();
         movimentacaoPage.salvar();
 
