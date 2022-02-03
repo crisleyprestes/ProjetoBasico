@@ -1,15 +1,15 @@
 package br.com.linhares.crisley;
 
+import static br.com.linhares.crisley.DriverFactory.getDriver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static br.com.linhares.crisley.DriverFactory.getDriver;
 
 public class BasePage {
 
