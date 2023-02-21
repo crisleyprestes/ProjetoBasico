@@ -7,16 +7,15 @@
 
 ### Setup do projeto
 
-Para executar o projeto são necessários as seguintes aplicações/ferramentas:
-
-- Selenium WebDriver Java v3.11.0
-- JUnit v4.12
-- Apache Commons-io v2.11.0
-- Maven Surefire Plugin v3.0.0-M5
-- Java
-- Google Chrome
-- IntelliJ Idea IDE
-- Git
+- Para executar o projeto são necessários as seguintes aplicações/ferramentas:
+  - Selenium WebDriver Java v3.11.0
+  - JUnit v4.12
+  - Apache Commons-io v2.11.0
+  - Maven Surefire Plugin v3.0.0-M5
+  - Java
+  - Google Chrome
+  - IntelliJ Idea IDE
+  - Git
 
 ### Clonando o projeto
 
@@ -42,3 +41,6 @@ O projeto é constituído dos seguintes diretórios/arquivos:
 - **_drivers_**: Diretório com os drivers utilizados na automação.
   - **_chromedriver_**: Driver do _Chrome_.
   - **_geckdriver_**: Driver do _Firefox_.
+
+**Notas**:
+  - **Notas**: Cada método de teste automatizado, ao fim de sua execução gera um screenshot como evidência. Este arquivo é salvo dentro do diretório **_/target/screenshots_**.
