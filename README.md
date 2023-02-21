@@ -8,6 +8,7 @@
 ### Setup do projeto
 
 - Para executar o projeto são necessários as seguintes aplicações/ferramentas:
+
   - Selenium WebDriver Java v3.11.0
   - JUnit v4.12
   - Apache Commons-io v2.11.0
