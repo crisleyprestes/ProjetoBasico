@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ProjetoBasico" />
+        <module name="br.com.linhares.crisley" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="15" />

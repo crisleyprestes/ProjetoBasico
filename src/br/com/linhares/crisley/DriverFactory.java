@@ -13,7 +13,6 @@ import java.net.URL;
 
 public class DriverFactory {
 
-    //private static WebDriver driver;
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<WebDriver>(){
         @Override
         protected synchronized WebDriver initialValue(){
