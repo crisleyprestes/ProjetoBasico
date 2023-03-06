@@ -3,7 +3,7 @@
 
 ### Descrição
 
-- Projeto referente às aplicações **_Campo de Treinamento_** e **_Seu Barriga_** utilizadas no curso **_Testes funcionais com Selenium WebDriver: Do básico ao GRID_** da Udemy.
+- Projeto referente às aplicações **_Campo de Treinamento_** e [**_Seu Barriga_**](https://seubarriga.wcaquino.me/login) utilizadas no curso **_Testes funcionais com Selenium WebDriver: Do básico ao GRID_** da Udemy.
 
 ### Setup do projeto
 
