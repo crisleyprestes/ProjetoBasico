@@ -3,45 +3,44 @@
 
 ### Descrição
 
-- Esta projeto se refere às aplicações **_Campo de Treinamento_** e **_Seu Barriga_** utilizadas como prática no curso **_Testes funcionais com Selenium WebDriver: Do básico ao GRID_** da Udemy.
+- Projeto referente às aplicações **_Campo de Treinamento_** e **_Seu Barriga_** utilizadas no curso **_Testes funcionais com Selenium WebDriver: Do básico ao GRID_** da Udemy.
 
 ### Setup do projeto
 
-- Para executar o projeto são necessários as seguintes aplicações/ferramentas:
+- Para executar o projeto são necessárias as seguintes dependências:
 
-  - Selenium WebDriver Java v3.11.0
-  - JUnit v4.12
-  - Apache Commons-io v2.11.0
-  - Maven Surefire Plugin v3.0.0-M5
-  - Java
-  - Google Chrome
-  - IntelliJ Idea IDE
-  - Git
+  - [Selenium WebDriver Java v3.11.0](https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.11.0)
+  - [JUnit v4.12](https://mvnrepository.com/artifact/junit/junit/4.12)
+  - [Apache Commons-io v2.11.0](https://mvnrepository.com/artifact/commons-io/commons-io/2.11.0)
+  - [Maven Surefire Plugin v3.0.0-M5](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin/3.0.0-M5)
+  - [Java v8u361](https://www.oracle.com/br/java/technologies/javase/javase8u211-later-archive-downloads.html)
+  - [Google Chrome v110.0.5481.178](https://www.google.com/intl/pt-BR/chrome/)
+  - [IntelliJ Idea IDE](https://www.jetbrains.com/idea/download/#section=windows) 
+  - [Git v2.39.1](https://git-scm.com/downloads)
 
-### Clonando o projeto
+### Clonando/Importando o projeto
 
-- Clone o projeto:
-<pre>git clone https://github.com/crisleyprestes/ProjetoBasico.git</pre>
+- Clone o projeto via CLI:
+<pre>
+git clone https://github.com/crisleyprestes/ProjetoBasico.git
+</pre>
 
-- Importe o projeto para a IDE.
+- Aguarde o _clone_ ser finalizado.
+
+- Na sua IDE de preferência, faça o _import_ do projeto.
+
+- Aguarde as dependências serem baixadas pelo **_Maven_** através do arquivo **_pom.xml_**.
 
 ### Estutura do projeto
 
-O projeto é constituído dos seguintes diretórios/arquivos:
+O projeto é estruturado conforme os diretórios abaixo:
 
-- **_src_**: Diretório com o código da automação e estruturas utilizadas no projeto. Dentro dele estão os seguintes diretórios/arquivos:
-  - **_pages_**: Classes de páginas de cadas _feature_ das aplicações **_Campo de Treinamento_** e **_Seu Barriga_**.
-  - **_suite_**: Tem a classe **_SuiteGeral.java_**, utilizada para ordenar a execução das classes de teste dentro da automação.
-  - **_tests_**: Classes com os testes automatizados para cada _feature_ das aplicações **_Campo de Treinamento_** e **_Seu Barriga_**.
-  - **_utils_**: Tem a classe **_DataUtils.java_**, com métodos para a coleta de data formatada para uso em métodos de teste e geração de evidências de execução dos testes.
-  - **_BasePage.java_**: Classe com os métodos gerais utilizados ao longo do projeto de automação.
-  - **_BaseTest.java_**: Classe com os métodos gerais utilizados na execução das classes de teste automatizadas.
-  - **_DriverFactory.java_**: Classe que instancia o _driver_ do _Selenium_ e determina a configuração de acesso às aplicações **_Campo de Treinamento_** e **_Seu Barriga_** a depender do tipo de conexão do teste e do navegador utilizados nos testes.
-  - **_Propriedades.java_**: Classe que passa os parâmetros de acesso de conexão e browser a serem utilizados nas aplicações **_Campo de Treinamento_** e **_Seu Barriga_**.
-
-- **_drivers_**: Diretório com os drivers utilizados na automação.
-  - **_chromedriver_**: Driver do _Chrome_.
-  - **_geckdriver_**: Driver do _Firefox_.
+- **_src_**: Contém o código da automação e demais estruturas.
+  - **_pages_**: Contém as páginas das _feature_ das aplicações automatizadas.
+  - **_suite_**: Contém a classe que gerencia a execução da automação.
+  - **_tests_**: Contém os testes automatizados de cada _feature_.
+  - **_utils_**: Contém a classe que gerencia as evidências de execução dos testes.
+- **_drivers_**: Contém os drivers utilizados na automação.
 
 **Notas**:
-  - **Notas**: Cada método de teste automatizado, ao fim de sua execução gera um screenshot como evidência. Este arquivo é salvo dentro do diretório **_/target/screenshots_**.
+  - **Notas**: Cada teste automatizado, ao fim da execução gera um screenshot de evidência. Este arquivo é salvo em **_/target/screenshots_** e não é _commitado_ para o GitHub.
