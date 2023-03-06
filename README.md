@@ -31,7 +31,7 @@ git clone https://github.com/crisleyprestes/ProjetoBasico.git
 
 - Aguarde as dependências serem baixadas pelo **_Maven_** através do arquivo **_pom.xml_**.
 
-### Estutura do projeto
+#### Estutura do projeto
 
 O projeto é estruturado conforme os diretórios abaixo:
 
